@@ -105,10 +105,10 @@ echo "<div class='modal fade' id='edit1'>
 					<form class='form-horizontal' method='POST' action='trailer_update.php'>
 						<input type='hidden' class='trailerid' name='id3'>
 					<div class='form-group'>
-						<label for='edit_trail_title' class='col-sm-3 control-label' required>Title</label>
+						<label for='edit_trail_title' class='col-sm-3 control-label'>Title</label>
 
 						<div class='col-sm-9'>
-						<input type='text' class='form-control' id='edit_trail_title' name='film_title'>
+						<input type='text' class='form-control' id='edit_trail_title' name='film_title' required>
 						</div>
 					</div>
 					<div class='form-group'>
@@ -178,14 +178,14 @@ echo "<div class='modal fade' id='edit1'>
 						<label for='edit_tech_author' class='col-sm-3 control-label'>Author</label>
 
 						<div class='col-sm-9'>
-						<input type='text' pattern='[A-Za-z]{2,}' class='form-control' id='edit_tech_author' name='tech_author' required>
+						<input type='text' pattern='[A-Za-z\s]{2,}' class='form-control' id='edit_tech_author' name='tech_author' required>
 						</div>
 					</div>
 					<div class='form-group'>
 						<label for='edit_tech_category' class='col-sm-3 control-label'>Category</label>
 
 						<div class='col-sm-9'>
-						<input type='text' pattern='[A-Za-z]{2,}' class='form-control' id='edit_tech_category' name='tech_category' required>
+						<input type='text' pattern='[A-Za-z\s]{2,}' class='form-control' id='edit_tech_category' name='tech_category' required>
 						</div>
 					</div>
 					<div class='form-group'>

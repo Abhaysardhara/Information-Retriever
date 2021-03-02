@@ -93,6 +93,43 @@ class Sport{
 			return false;
 		}
 	}
+
+	// create new Sport record
+	function create(){
+
+		// insert query
+		$query = "INSERT INTO
+					" . $this->table_name . "
+				SET
+					headline = :headline,
+					author = :author,
+					sport = :sport,
+					link = :link";
+
+		// prepare the query
+		$stmt = $this->conn->prepare($query);
+
+		// sanitize
+		$this->headline=htmlspecialchars(strip_tags($this->headline));
+		$this->author=htmlspecialchars(strip_tags($this->author));
+		$this->sport=htmlspecialchars(strip_tags($this->sport));
+		$this->link=htmlspecialchars(strip_tags($this->link));
+
+		// bind the values
+		$stmt->bindParam(':headline', $this->headline);
+		$stmt->bindParam(':author', $this->author);
+		$stmt->bindParam(':sport', $this->sport);
+		$stmt->bindParam(':link', $this->link);
+
+		// execute the query, also check if query was successful
+		if($stmt->execute()){
+			return true;
+		}
+		else{
+			$this->showError($stmt);
+			return false;
+		}
+	}
 }
 
 ?>

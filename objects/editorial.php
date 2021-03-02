@@ -91,6 +91,44 @@ class Editorial {
 			return false;
 		}
 	}
+
+	// create new user record
+	function create(){
+
+		// to get time stamp for 'created' field
+		// $this->created=date('Y-m-d H:i:s');
+
+		// insert query
+		$query = "INSERT INTO
+					" . $this->table_name . "
+				SET
+					headline = :headline,
+					paper = :paper,
+					link = :link";
+
+		// prepare the query
+		$stmt = $this->conn->prepare($query);
+
+		// sanitize
+		$this->headline=htmlspecialchars(strip_tags($this->headline));
+		$this->paper=htmlspecialchars(strip_tags($this->paper));
+		$this->link=htmlspecialchars(strip_tags($this->link));
+
+		// bind the values
+		$stmt->bindParam(':headline', $this->headline);
+		$stmt->bindParam(':paper', $this->paper);
+		$stmt->bindParam(':link', $this->link);
+
+		// execute the query, also check if query was successful
+		if($stmt->execute()){
+			return true;
+		}
+		else{
+			$this->showError($stmt);
+			return false;
+		}
+	}
+
 }
 
 ?>

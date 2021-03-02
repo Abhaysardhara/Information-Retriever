@@ -95,6 +95,49 @@ class Film{
 			return false;
 		}
 	}
+
+	// create new Sport record
+	function create(){
+
+		// insert query
+		$query = "INSERT INTO
+					" . $this->table_name . "
+				SET
+					title = :title,
+					language = :language,
+					description = :description,
+					date = :date,
+					review = :review,
+					url = :url";
+
+		// prepare the query
+		$stmt = $this->conn->prepare($query);
+
+		// sanitize
+		$this->title=htmlspecialchars(strip_tags($this->title));
+		$this->language=htmlspecialchars(strip_tags($this->language));
+		$this->description=htmlspecialchars(strip_tags($this->description));
+		$this->date=htmlspecialchars(strip_tags($this->date));
+		$this->review=htmlspecialchars(strip_tags($this->review));
+		$this->url=htmlspecialchars(strip_tags($this->url));
+
+		// bind the values
+		$stmt->bindParam(':title', $this->title);
+		$stmt->bindParam(':language', $this->language);
+		$stmt->bindParam(':description', $this->description);
+		$stmt->bindParam(':date', $this->date);
+		$stmt->bindParam(':review', $this->review);
+		$stmt->bindParam(':url', $this->url);
+
+		// execute the query, also check if query was successful
+		if($stmt->execute()){
+			return true;
+		}
+		else{
+			$this->showError($stmt);
+			return false;
+		}
+	}
 }
 
 ?>
