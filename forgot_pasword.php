@@ -26,14 +26,15 @@ include_once "layout_head.php";
 
 // if the login form was submitted
 if($_POST){
-
-	echo "<div class='col-sm-12'>";
+	echo "<div class='col-md-'>";
 
 		// check if username and password are in the database
 		$user->email=$_POST['email'];
 		$x = htmlspecialchars(strip_tags($_POST['nick_name']));
+		$x = strtolower($x);
 
-		if($user->emailExists()) {
+		$arr = $user->emailExists();
+		if($arr['status']) {
 			if($user->verify($x)) {
 				header("Location: {$home_url}reset_password.php?action={$user->id}");
 			}

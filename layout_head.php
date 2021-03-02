@@ -19,6 +19,22 @@
 	<!-- admin custom CSS -->
 	<link href="<?php echo $home_url . "libs/css/user.css" ?>" rel="stylesheet" />
 
+	<script type="text/javascript">
+		function validateForm()
+		{
+			var x=document.forms["myForm"]["email"].value
+			var atpos=x.indexOf("@");
+			var dotpos=x.lastIndexOf(".");
+			if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+			{
+				document.getElementById('errorEmail').style.display = 'block';
+				document.getElementById('errorEmail').style.border = 'thick solid red';
+				document.getElementById('errorEmail').innerHTML = 'Invalid Email address';
+				return false;
+			}
+		}
+	</script>
+
 </head>
 <body>
 

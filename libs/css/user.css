@@ -8,6 +8,10 @@
 
 div#blueimp-gallery div.modal{ overflow: visible; }
 
+input:invalid {
+    border: 2px solid red;
+}
+  
 .photo-thumb{
     width:214px;
     height:214px;

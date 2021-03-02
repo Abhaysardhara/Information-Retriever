@@ -61,7 +61,7 @@ class User{
 			$this->access_level = $row['access_level'];
 			$this->password = $row['password'];
 			$this->status = $row['status'];
-			$this->nick_name = $row['nick_name'];
+			$this->nick_name = strtolower($row['nick_name']);
 			$this->user_type = $row['user_type'];
 
 			// return true because email exists in the database

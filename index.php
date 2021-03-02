@@ -40,6 +40,24 @@ function lang($id) {
 	else if($id == 5) {
 		return "Marathi";
 	}
+	else if($id == 6) {
+		return "Bengali";
+	}
+	else if($id == 7) {
+		return "Kannada";
+	}
+	else if($id == 8) {
+		return "Malayalam";
+	}
+	else if($id == 9) {
+		return "Punjabi";
+	}
+	else if($id == 10) {
+		return "Telugu";
+	}
+	else if($id == 11) {
+		return "Urdu";
+	}
 }
 
 // include page header HTML
@@ -343,9 +361,6 @@ echo "<div class='col-md-12'>";
 			}
 			echo "</tbody>";
 		echo "</table>";
-?>
-
-<?php
 echo "</div>";
 
 include 'index_modal.php';
