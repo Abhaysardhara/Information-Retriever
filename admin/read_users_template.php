@@ -76,56 +76,67 @@ echo "<div class='modal fade' id='addnew'>
                   	<label for='firstname' class='col-sm-3 control-label'>Firstname</label>
 
                   	<div class='col-sm-9'>
-                    	<input type='text' class='form-control' id='firstname' name='firstname' required>
+                    	<input type='text' pattern='[A-Za-z]{2,}' class='form-control' id='firstname' name='firstname' required>
                   	</div>
                 </div>
                 <div class='form-group'>
                   	<label for='lastname' class='col-sm-3 control-label'>Lastname</label>
 
                   	<div class='col-sm-9'>
-                    	<input type='text' class='form-control' id='lastname' name='lastname' required>
+                    	<input type='text' pattern='[A-Za-z]{1,}' class='form-control' id='lastname' name='lastname' required>
                   	</div>
                 </div>
                 <div class='form-group'>
                     <label for='email' class='col-sm-3 control-label'>Email</label>
 
                     <div class='col-sm-9'>
-                      <input type='email' class='form-control' id='email' name='email'>
+                      <input type='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$' title='Enter valid email address' class='form-control' id='email' name='email' required>
                     </div>
                 </div>
                 <div class='form-group'>
                     <label for='contact' class='col-sm-3 control-label'>Contact Info</label>
 
                     <div class='col-sm-9'>
-                      <input type='text' class='form-control' id='contact' name='contact'>
+                      <input type='tel' pattern='[6-9]{1}[0-9]{9}' title='Mobile number should not be start with 0-5 and it should be of length 10' class='form-control' id='contact' name='contact' required>
                     </div>
                 </div>
                 <div class='form-group'>
                   	<label for='address' class='col-sm-3 control-label'>Address</label>
 
                   	<div class='col-sm-9'>
-                      <textarea class='form-control' name='address' id='address'></textarea>
+                      <textarea class='form-control' pattern='[\w',-\\/.\s]' name='address' id='address' required></textarea>
                   	</div>
                 </div>
                 <div class='form-group'>
                   	<label for='password' class='col-sm-3 control-label'>Password</label>
 
                   	<div class='col-sm-9'>
-                      <input type='password' class='form-control' id='password' name='password'>
+                      <input type='password' pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title='Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters' class='form-control' id='password' name='password' required>
                   	</div>
                 </div>
                 <div class='form-group'>
                     <label for='level' class='col-sm-3 control-label'>Access Level</label>
 
                     <div class='col-sm-9'>
-                      <input type='text' class='form-control' id='level' name='level'>
+                      <div class='form-check'>
+                        <input class='form-check-input' value='Admin' type='radio' name='level' id='flexRadioDefault1'>
+                        <label class='form-check-label' for='flexRadioDefault1'>
+                          Admin
+                        </label>
+                      </div>
+                      <div class='form-check'>
+                        <input class='form-check-input' value='Customer' type='radio' name='level' id='flexRadioDefault2' checked>
+                        <label class='form-check-label' for='flexRadioDefault2'>
+                          Customer
+                        </label>
+                      </div>
                     </div>
                 </div>
                 <div class='form-group'>
                     <label for='nick' class='col-sm-3 control-label'>Nick Name</label>
 
                     <div class='col-sm-9'>
-                      <input type='text' class='form-control' id='nick' name='nick_name'>
+                      <input type='text' pattern='[A-Za-z0-9]{2,}' class='form-control' id='nick' name='nick_name' required>
                     </div>
                 </div>
           	</div>
@@ -153,42 +164,42 @@ echo "<div class='modal fade' id='edit'>
                     <label for='edit_firstname' class='col-sm-3 control-label'>Firstname</label>
 
                     <div class='col-sm-9'>
-                      <input type='text' class='form-control' id='edit_firstname' name='firstname'>
+                      <input type='text' pattern='[A-Za-z]{2,}' class='form-control' id='edit_firstname' name='firstname' required>
                     </div>
                 </div>
                 <div class='form-group'>
                     <label for='edit_lastname' class='col-sm-3 control-label'>Lastname</label>
 
                     <div class='col-sm-9'>
-                      <input type='text' class='form-control' id='edit_lastname' name='lastname'>
+                      <input type='text' pattern='[A-Za-z]{2,}' class='form-control' id='edit_lastname' name='lastname' required>
                     </div>
                 </div>
                 <div class='form-group'>
                     <label for='edit_email' class='col-sm-3 control-label'>Email</label>
 
                     <div class='col-sm-9'>
-                      <input type='email' class='form-control' id='edit_email' name='email'>
+                      <input type='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$' title='Enter valid email address' class='form-control' id='edit_email' name='email' required>
                     </div>
                 </div>
                 <div class='form-group'>
                     <label for='edit_address' class='col-sm-3 control-label'>Address</label>
 
                     <div class='col-sm-9'>
-                      <textarea class='form-control' name='address' id='edit_address'></textarea>
+                      <textarea class='form-control' pattern='[\w',-\\/.\s]' name='address' id='edit_address' required></textarea>
                     </div>
                 </div>
                 <div class='form-group'>
                     <label for='edit_contact' class='col-sm-3 control-label'>Contact Info</label>
 
                     <div class='col-sm-9'>
-                      <input type='text' class='form-control' id='edit_contact' name='contact'>
+                      <input type='tel' pattern='[6-9]{1}[0-9]{9}' title='Mobile number should not be start with 0-5 and it should be of length 10' class='form-control' id='edit_contact' name='contact' required>
                     </div>
                 </div>
                 <div class='form-group'>
                     <label for='edit_nick' class='col-sm-3 control-label'>Nick Name</label>
 
                     <div class='col-sm-9'>
-                      <input type='text' class='form-control' id='edit_nick' name='nick_name'>
+                      <input type='text' pattern='[A-Za-z0-9]{2,}' class='form-control' id='edit_nick' name='nick_name' required>
                     </div>
                 </div>
                 <div class='form-group'>
@@ -196,20 +207,15 @@ echo "<div class='modal fade' id='edit'>
 
                     <div class='col-sm-9'>
                       <input type='text' class='form-control' id='edit_level' name='level'>
-                    </div>
-                </div>
-                <div class='form-group'>
-                    <label for='edit_type' class='col-sm-3 control-label'>User Type</label>
-
-                    <div class='col-sm-9'>
-                      <input type='text' class='form-control' id='edit_type' name='user_type'>
+                      <div>Admin / Customer</div>
                     </div>
                 </div>
                 <div class='form-group'>
                     <label for='edit_status' class='col-sm-3 control-label'>Status</label>
 
                     <div class='col-sm-9'>
-                      <input type='text' class='form-control' id='edit_status' name='status'>
+                      <input type='number' min='0' max='1' class='form-control' id='edit_status' name='status' required>
+                      <div>0-Inactive, 1-Active</div>
                     </div>
                 </div>
           	</div>

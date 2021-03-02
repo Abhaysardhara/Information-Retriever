@@ -25,20 +25,20 @@ include_once "layout_head.php";
 echo "<div class='col-md-12'>";
 
     if(isset($_SESSION['success_add'])) {
-    echo "<div class='alert alert-success alert-dismissible' role='alert'>User registered successfully.</div>";
-    unset($_SESSION['success_add']);
+        echo "<div class='alert alert-success alert-dismissible' role='alert'>User registered successfully.</div>";
+        unset($_SESSION['success_add']);
     }
     else if(isset($_SESSION['success_update'])) {
-    echo "<div class='alert alert-success alert-dismissible' role='alert'>User updated successfully.</div>";
-    unset($_SESSION['success_update']);
+        echo "<div class='alert alert-success alert-dismissible' role='alert'>User updated successfully.</div>";
+        unset($_SESSION['success_update']);
     }
     else if(isset($_SESSION['success_delete'])) {
-    echo "<div class='alert alert-success alert-dismissible' role='alert'>User deleted successfully.</div>";
-    unset($_SESSION['delete']);
+        echo "<div class='alert alert-success alert-dismissible' role='alert'>User deleted successfully.</div>";
+        unset($_SESSION['success_delete']);
     }
     else if(isset($_SESSION['error'])) {
-    echo "<div class='alert alert-danger alert-dismissible' role='alert'>There is some error, please contact developer.</div>";  
-    unset($_SESSION['error']); 
+        echo "<div class='alert alert-danger alert-dismissible' role='alert'>There is some error, please contact developer.</div>";  
+        unset($_SESSION['error']); 
     }
     // read all users from the database
     $stmt = $user->readAll();

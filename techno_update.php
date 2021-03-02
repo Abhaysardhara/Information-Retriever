@@ -25,7 +25,7 @@ if(isset($_POST['edit4'])){
     
     if($techno->editTechnoRow()){
         $_SESSION['te_success_update'] = 'Tech data updated';
-        header('location: index.php');
+        header('location: '. $home_url . '?action=technology');
     }
     else{
         $_SESSION['error'] = "Some Error in database";
@@ -33,7 +33,7 @@ if(isset($_POST['edit4'])){
 }
 else{
     $_SESSION['error'] = 'Select sport entry to edit first';
-    header('location: index.php');
+    header('location: '. $home_url . '?action=technology');
 }
 
 ?>

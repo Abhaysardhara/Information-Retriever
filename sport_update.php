@@ -25,7 +25,7 @@ if(isset($_POST['edit1'])){
     
     if($sport->editSportRow()){
         $_SESSION['s_success_update'] = 'Sport data updated successfully';
-        header('location: index.php');
+        header('location: '. $home_url . '?action=sports');
     }
     else{
         $_SESSION['error'] = "Some Error in database";
@@ -33,7 +33,7 @@ if(isset($_POST['edit1'])){
 }
 else{
     $_SESSION['error'] = 'Select sport entry to edit first';
-    header('location: index.php');
+    header('location: '. $home_url . '?action=sports');
 }
 
 ?>

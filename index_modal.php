@@ -204,18 +204,4 @@ echo "<div class='modal fade' id='edit1'>
 			</div>
 		</div>
 	</div>";
-
-	// <select class='form-control' id='sel1'>
-	// 	<option value='1'>English</option>
-	// 	<option value='2'>Hindi</option>
-	// 	<option value='3'>Gujarati</option>
-	// 	<option value='4'>Tamil</option>
-	// 	<option value='5'>Marathi</option>
-	// 	<option value='6'>Bengali</option>	
-	// 	<option value='7'>Kannada</option>
-	// 	<option value='8'>Malayalam</option>
-	// 	<option value='9'>Punjabi</option>
-	// 	<option value='10'>Telugu</option>
-	// 	<option value='11'>Urdu</option>
-	// </select>
 ?>

@@ -211,7 +211,6 @@ echo "<div class='col-md-12'>";
 						<a href="<?php echo $home_url . "?action=technology"; ?>">Technology</a>
 					</li>
 				</ul>
-				</ul>
 			</div>
 		</div>
 	</div>
@@ -224,6 +223,11 @@ echo "<div class='col-md-12'>";
 			// table headers
 			echo "<thead>";
 			if($choice == "sports") {
+				if($_SESSION['sport_w']) {
+					echo "<div class='float-right'>";
+						echo "<a href='#addNewSport' data-toggle='modal' class='btn btn-primary btn-sm btn-flat'><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> New Entry</a>";
+					echo "</div></br>";
+				}
 				echo "<tr>";
 					echo "<th>Headline</th>";
 					echo "<th>Author</th>";
@@ -236,6 +240,11 @@ echo "<div class='col-md-12'>";
 				echo "</tr>";
 			}
 			else if($choice == "editorial") {
+				if($_SESSION['editorial_w']) {
+					echo "<div class='float-right'>";
+						echo "<a href='#addNewEditorial' data-toggle='modal' class='btn btn-primary btn-sm btn-flat'><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> New Entry</a>";
+					echo "</div></br>";
+				}
 				echo "<tr>";
 					echo "<th>Headline</th>";
 					echo "<th>Paper</th>";
@@ -247,6 +256,11 @@ echo "<div class='col-md-12'>";
 				echo "</tr>";
 			}
 			else if($choice == "trailer") {
+				if($_SESSION['trailer_w']) {
+					echo "<div class='float-right'>";
+						echo "<a href='#addNewTrailer' data-toggle='modal' class='btn btn-primary btn-sm btn-flat'><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> New Entry</a>";
+					echo "</div></br>";
+				}
 				echo "<tr>";
 					echo "<th>Title</th>";
 					echo "<th>Language</th>";
@@ -260,6 +274,11 @@ echo "<div class='col-md-12'>";
 				echo "</tr>";
 			}
 			else {
+				if($_SESSION['tech_w']) {
+					echo "<div class='float-right'>";
+						echo "<a href='#addNewTech' data-toggle='modal' class='btn btn-primary btn-sm btn-flat'><span class='glyphicon glyphicon-plus' aria-hidden='true'></span> New Entry</a>";
+					echo "</div></br>";
+				}
 				echo "<tr>";
 					echo "<th>Headline</th>";
 					echo "<th>Author</th>";
@@ -363,6 +382,7 @@ echo "<div class='col-md-12'>";
 		echo "</table>";
 echo "</div>";
 
+include 'index_add_modal.php';
 include 'index_modal.php';
 // footer HTML and JavaScript codes
 include 'layout_foot.php';

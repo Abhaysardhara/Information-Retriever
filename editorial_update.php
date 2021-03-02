@@ -24,7 +24,7 @@ if(isset($_POST['edit2'])){
     
     if($edit->editEditorialRow()){
         $_SESSION['e_success_update'] = 'Editorial data updated';
-        header('location: index.php');
+        header('location: '. $home_url . '?action=editorial');
     }
     else{
         $_SESSION['error'] = "Some Error in database";
@@ -32,7 +32,7 @@ if(isset($_POST['edit2'])){
 }
 else{
     $_SESSION['error'] = 'Select Editorial entry to edit first';
-    header('location: index.php');
+    header('location: '. $home_url . '?action=editorial');
 }
 
 ?>

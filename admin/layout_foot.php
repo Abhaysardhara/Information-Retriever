@@ -42,7 +42,7 @@ function getRow(id){
     dataType: 'json',
     success: function(response){
       $('.empid').val(response.id);
-      $('.employee_id').html(response.id);
+      $('.employee_id').html(response.firstname+' '+response.lastname+' - '+response.access_level);
       $('.del_employee_name').html(response.firstname+' '+response.lastname);
       $('#employee_name').html(response.firstname+' '+response.lastname);
       $('#edit_firstname').val(response.firstname);

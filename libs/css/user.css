@@ -7,10 +7,6 @@
 .text-align-center{ text-align:center; }
 
 div#blueimp-gallery div.modal{ overflow: visible; }
-
-input:invalid {
-    border: 2px solid red;
-}
   
 .photo-thumb{
     width:214px;

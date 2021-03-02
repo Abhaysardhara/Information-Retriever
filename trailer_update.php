@@ -26,7 +26,7 @@ if(isset($_POST['edit3'])){
     
     if($f->editTrailerRow()){
         $_SESSION['tr_success_update'] = 'Trailer data updated';
-        header('location: index.php');
+        header('location: '. $home_url . '?action=trailer');
     }
     else{
         $_SESSION['error'] = "Some Error in database";
@@ -34,7 +34,7 @@ if(isset($_POST['edit3'])){
 }
 else{
     $_SESSION['error'] = 'Select trailer entry to edit first';
-    header('location: index.php');
+    header('location: '. $home_url . '?action=trailer');
 }
 
 ?>
