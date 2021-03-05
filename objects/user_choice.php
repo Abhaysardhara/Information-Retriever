@@ -60,6 +60,56 @@ class Choice {
         }
     }
 
+	function adminReg() {
+        // insert query
+		$query = "INSERT INTO
+                " . $this->table_name . "
+            SET
+                id = :id,
+                sport_r = :sport_r,
+                editorial_r = :editorial_r,
+                trailer_r = :trailer_r,
+                tech_r = :tech_r,
+				sport_w = :sport_w,
+                editorial_w = :editorial_w,
+                trailer_w = :trailer_w,
+                tech_w = :tech_w";
+
+        // prepare the query
+        $stmt = $this->conn->prepare($query);
+
+        // sanitize
+        $this->id=htmlspecialchars(strip_tags($this->id));
+        $this->sport_r=htmlspecialchars(strip_tags($this->sport_r));
+        $this->editorial_r=htmlspecialchars(strip_tags($this->editorial_r));
+        $this->trailer_r=htmlspecialchars(strip_tags($this->trailer_r));
+        $this->tech_r=htmlspecialchars(strip_tags($this->tech_r));
+		$this->sport_w=htmlspecialchars(strip_tags($this->sport_w));
+        $this->editorial_w=htmlspecialchars(strip_tags($this->editorial_w));
+        $this->trailer_w=htmlspecialchars(strip_tags($this->trailer_w));
+        $this->tech_w=htmlspecialchars(strip_tags($this->tech_w));
+
+        // bind the values
+        $stmt->bindParam(':id', $this->id);
+        $stmt->bindParam(':sport_r', $this->sport_r);
+        $stmt->bindParam(':editorial_r', $this->editorial_r);
+        $stmt->bindParam(':trailer_r', $this->trailer_r);
+        $stmt->bindParam(':tech_r', $this->tech_r);
+		$stmt->bindParam(':sport_w', $this->sport_w);
+        $stmt->bindParam(':editorial_w', $this->editorial_w);
+        $stmt->bindParam(':trailer_w', $this->trailer_w);
+        $stmt->bindParam(':tech_w', $this->tech_w);
+
+        // execute the query, also check if query was successful
+        if($stmt->execute()){
+            return true;
+        }
+        else{
+            $this->showError($stmt);
+            return false;
+        }
+    }
+
     // Get User choice after login
 	function getUserChoice($login_id) {
 
@@ -95,6 +145,60 @@ class Choice {
 
 		// return false if email does not exist in the database
 		return "Some Error";
+	}
+
+    // Edit user choice
+	function editChoice() {
+
+        $sql = "UPDATE user_choice SET sport_r = :sport_r, editorial_r = :editorial_r, trailer_r = :trailer_r, tech_r = :tech_r, sport_w = :sport_w, editorial_w = :editorial_w, trailer_w = :trailer_w, tech_w = :tech_w WHERE id = :id";
+
+        // prepare the query
+        $stmt = $this->conn->prepare($sql);
+
+        // sanitize
+        $this->id=htmlspecialchars(strip_tags($this->id));
+        $this->sport_r=htmlspecialchars(strip_tags($this->sport_r));
+        $this->editorial_r=htmlspecialchars(strip_tags($this->editorial_r));
+        $this->trailer_r=htmlspecialchars(strip_tags($this->trailer_r));
+        $this->tech_r=htmlspecialchars(strip_tags($this->tech_r));
+		$this->sport_w=htmlspecialchars(strip_tags($this->sport_w));
+        $this->editorial_w=htmlspecialchars(strip_tags($this->editorial_w));
+        $this->trailer_w=htmlspecialchars(strip_tags($this->trailer_w));
+        $this->tech_w=htmlspecialchars(strip_tags($this->tech_w));
+
+        // bind the values
+        $stmt->bindParam(':id', $this->id);
+        $stmt->bindParam(':sport_r', $this->sport_r);
+        $stmt->bindParam(':editorial_r', $this->editorial_r);
+        $stmt->bindParam(':trailer_r', $this->trailer_r);
+        $stmt->bindParam(':tech_r', $this->tech_r);
+		$stmt->bindParam(':sport_w', $this->sport_w);
+        $stmt->bindParam(':editorial_w', $this->editorial_w);
+        $stmt->bindParam(':trailer_w', $this->trailer_w);
+        $stmt->bindParam(':tech_w', $this->tech_w);
+
+		// execute the query, also check if query was successful
+		if($stmt->execute()){
+			return true;
+		}
+		else{
+			$this->showError($stmt);
+			return false;
+		}
+	}
+
+	// Delete choice details
+	function deleteChoice() {
+		$sql = "DELETE FROM ". $this->table_name ." WHERE id = '$this->id'";
+		$stmt = $this->conn->prepare($sql);
+		// execute the query, also check if query was successful
+		if($stmt->execute()){
+			return true;
+		}
+		else{
+			$this->showError($stmt);
+			return false;
+		}
 	}
 }
 

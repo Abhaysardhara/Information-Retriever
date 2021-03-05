@@ -71,47 +71,47 @@ echo "<div class='modal fade' id='addnew'>
             	<h4 class='modal-title'><b>Add User</b></h4>
           	</div>
           	<div class='modal-body'>
-            	<form class='form-horizontal' method='POST' action='employee_add.php' enctype='multipart/form-data'>
+            	<form class='form-horizontal' id='add_user_admin' method='POST' action='employee_add.php' enctype='multipart/form-data'>
           		  <div class='form-group'>
                   	<label for='firstname' class='col-sm-3 control-label'>Firstname</label>
 
                   	<div class='col-sm-9'>
-                    	<input type='text' pattern='[A-Za-z]{2,}' class='form-control' id='firstname' name='firstname' required>
+                    	<input type='text' class='form-control' id='firstname' name='firstname' required>
                   	</div>
                 </div>
                 <div class='form-group'>
                   	<label for='lastname' class='col-sm-3 control-label'>Lastname</label>
 
                   	<div class='col-sm-9'>
-                    	<input type='text' pattern='[A-Za-z]{1,}' class='form-control' id='lastname' name='lastname' required>
+                    	<input type='text' class='form-control' id='lastname' name='lastname' required>
                   	</div>
                 </div>
                 <div class='form-group'>
                     <label for='email' class='col-sm-3 control-label'>Email</label>
 
                     <div class='col-sm-9'>
-                      <input type='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$' title='Enter valid email address' class='form-control' id='email' name='email' required>
+                      <input type='email' class='form-control' id='email' name='email' required>
                     </div>
                 </div>
                 <div class='form-group'>
                     <label for='contact' class='col-sm-3 control-label'>Contact Info</label>
 
                     <div class='col-sm-9'>
-                      <input type='tel' pattern='[6-9]{1}[0-9]{9}' title='Mobile number should not be start with 0-5 and it should be of length 10' class='form-control' id='contact' name='contact' required>
+                      <input type='tel' class='form-control' id='contact' name='contact' required>
                     </div>
                 </div>
                 <div class='form-group'>
                   	<label for='address' class='col-sm-3 control-label'>Address</label>
 
                   	<div class='col-sm-9'>
-                      <textarea class='form-control' pattern='[\w',-\\/.\s]' name='address' id='address' required></textarea>
+                      <input type='text' class='form-control' name='address' id='address' required>
                   	</div>
                 </div>
                 <div class='form-group'>
                   	<label for='password' class='col-sm-3 control-label'>Password</label>
 
                   	<div class='col-sm-9'>
-                      <input type='password' pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title='Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters' class='form-control' id='password' name='password' required>
+                      <input type='password' class='form-control' id='password' name='password' required>
                   	</div>
                 </div>
                 <div class='form-group'>
@@ -132,11 +132,73 @@ echo "<div class='modal fade' id='addnew'>
                       </div>
                     </div>
                 </div>
+                <hr>
+                <div class='form-group'>
+                    <label for='read[]' class='col-sm-3 control-label'>Read Permissions</label>
+
+                    <div class='col-sm-9'>
+                      <div class='form-check'>
+                        <input class='form-check-input' name='read[]' type='checkbox' value='sport' id='flexCheckDefault'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                          Sport
+                        </label>
+                      </div>
+                      <div class='form-check'>
+                        <input class='form-check-input' name='read[]' type='checkbox' value='editorial' id='flexCheckDefault'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                          Editorial
+                        </label>
+                      </div>
+                      <div class='form-check'>
+                        <input class='form-check-input' name='read[]' type='checkbox' value='trailer' id='flexCheckDefault'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                          Trailer
+                        </label>
+                      </div>
+                      <div class='form-check'>
+                        <input class='form-check-input' name='read[]' type='checkbox' value='technology' id='flexCheckDefault'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                          Technology
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                <hr>
+                <div class='form-group'>
+                    <label for='write[]' class='col-sm-3 control-label'>Write Permissions</label>
+
+                    <div class='col-sm-9'>
+                      <div class='form-check'>
+                        <input class='form-check-input' name='write[]' type='checkbox' value='sport' id='flexCheckDefault'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                          Sport
+                        </label>
+                      </div>
+                      <div class='form-check'>
+                        <input class='form-check-input' name='write[]' type='checkbox' value='editorial' id='flexCheckDefault'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                          Editorial
+                        </label>
+                      </div>
+                      <div class='form-check'>
+                        <input class='form-check-input' name='write[]' type='checkbox' value='trailer' id='flexCheckDefault'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                          Trailer
+                        </label>
+                      </div>
+                      <div class='form-check'>
+                        <input class='form-check-input' name='write[]' type='checkbox' value='technology' id='flexCheckDefault'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                          Technology
+                        </label>
+                      </div>
+                    </div>
+                </div>
                 <div class='form-group'>
                     <label for='nick' class='col-sm-3 control-label'>Nick Name</label>
 
                     <div class='col-sm-9'>
-                      <input type='text' pattern='[A-Za-z0-9]{2,}' class='form-control' id='nick' name='nick_name' required>
+                      <input type='text' class='form-control' id='nick' name='nick_name' required>
                     </div>
                 </div>
           	</div>
@@ -158,66 +220,149 @@ echo "<div class='modal fade' id='edit'>
             	<h4 class='modal-title'><b><span class='employee_id'></span></b></h4>
           	</div>
           	<div class='modal-body'>
-            	<form class='form-horizontal' method='POST' action='employee_update.php'>
+            	<form class='form-horizontal' id='edit_user_admin' method='POST' action='employee_update.php'>
             		<input type='hidden' class='empid' name='id'>
                 <div class='form-group'>
                     <label for='edit_firstname' class='col-sm-3 control-label'>Firstname</label>
 
                     <div class='col-sm-9'>
-                      <input type='text' pattern='[A-Za-z]{2,}' class='form-control' id='edit_firstname' name='firstname' required>
+                      <input type='text' class='form-control' id='edit_firstname' name='firstname' required>
                     </div>
                 </div>
                 <div class='form-group'>
                     <label for='edit_lastname' class='col-sm-3 control-label'>Lastname</label>
 
                     <div class='col-sm-9'>
-                      <input type='text' pattern='[A-Za-z]{2,}' class='form-control' id='edit_lastname' name='lastname' required>
+                      <input type='text' class='form-control' id='edit_lastname' name='lastname' required>
                     </div>
                 </div>
                 <div class='form-group'>
                     <label for='edit_email' class='col-sm-3 control-label'>Email</label>
 
                     <div class='col-sm-9'>
-                      <input type='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$' title='Enter valid email address' class='form-control' id='edit_email' name='email' required>
+                      <input type='email' class='form-control' id='edit_email' name='email' required>
                     </div>
                 </div>
                 <div class='form-group'>
                     <label for='edit_address' class='col-sm-3 control-label'>Address</label>
 
                     <div class='col-sm-9'>
-                      <textarea class='form-control' pattern='[\w',-\\/.\s]' name='address' id='edit_address' required></textarea>
+                      <input type='text' class='form-control' name='address' id='edit_address' required>
                     </div>
                 </div>
                 <div class='form-group'>
                     <label for='edit_contact' class='col-sm-3 control-label'>Contact Info</label>
 
                     <div class='col-sm-9'>
-                      <input type='tel' pattern='[6-9]{1}[0-9]{9}' title='Mobile number should not be start with 0-5 and it should be of length 10' class='form-control' id='edit_contact' name='contact' required>
+                      <input type='tel' class='form-control' id='edit_contact' name='contact' required>
                     </div>
                 </div>
                 <div class='form-group'>
                     <label for='edit_nick' class='col-sm-3 control-label'>Nick Name</label>
 
                     <div class='col-sm-9'>
-                      <input type='text' pattern='[A-Za-z0-9]{2,}' class='form-control' id='edit_nick' name='nick_name' required>
+                      <input type='text' class='form-control' id='edit_nick' name='nick_name' required>
                     </div>
                 </div>
                 <div class='form-group'>
-                    <label for='edit_level' class='col-sm-3 control-label'>Access Level</label>
+                    <label for='level' class='col-sm-3 control-label'>Access Level</label>
 
                     <div class='col-sm-9'>
-                      <input type='text' class='form-control' id='edit_level' name='level'>
-                      <div>Admin / Customer</div>
+                      <div class='form-check'>
+                        <input class='form-check-input' value='Admin' type='radio' name='level' id='radio1'>
+                        <label class='form-check-label' for='radio1'>
+                          Admin
+                        </label>
+                      </div>
+                      <div class='form-check'>
+                        <input class='form-check-input' value='Customer' type='radio' name='level' id='radio2'>
+                        <label class='form-check-label' for='radio2'>
+                          Customer
+                        </label>
+                      </div>
                     </div>
-                </div>
+                </div> 
+                <hr>
                 <div class='form-group'>
-                    <label for='edit_status' class='col-sm-3 control-label'>Status</label>
+                    <label for='status' class='col-sm-3 control-label'>Status</label>
 
                     <div class='col-sm-9'>
-                      <input type='number' min='0' max='1' class='form-control' id='edit_status' name='status' required>
-                      <div>0-Inactive, 1-Active</div>
+                      <div class='form-check'>
+                        <input class='form-check-input' value='1' type='radio' name='status' id='edit_status1'>
+                        <label class='form-check-label' for='edit_status1'>
+                          Active
+                        </label>
+                      </div>
+                      <div class='form-check'>
+                        <input class='form-check-input' value='0' type='radio' name='status' id='edit_status2'>
+                        <label class='form-check-label' for='edit_status2'>
+                          Inactive
+                        </label>
+                      </div>
                     </div>
                 </div>
+                <hr>
+                <div class='form-group'>
+                    <label for='read[]' class='col-sm-3 control-label'>Read Permissions</label>
+
+                    <div class='col-sm-9'>
+                      <div class='form-check'>
+                        <input class='form-check-input' name='read[]' type='checkbox' value='sport' id='read_s'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                          Sport
+                        </label>
+                      </div>
+                      <div class='form-check'>
+                        <input class='form-check-input' name='read[]' type='checkbox' value='editorial' id='read_e'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                          Editorial
+                        </label>
+                      </div>
+                      <div class='form-check'>
+                        <input class='form-check-input' name='read[]' type='checkbox' value='trailer' id='read_tr'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                          Trailer
+                        </label>
+                      </div>
+                      <div class='form-check'>
+                        <input class='form-check-input' name='read[]' type='checkbox' value='technology' id='read_te'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                          Technology
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                <hr>
+                <div class='form-group'>
+                    <label for='write[]' class='col-sm-3 control-label'>Write Permissions</label>
+
+                    <div class='col-sm-9'>
+                      <div class='form-check'>
+                        <input class='form-check-input' name='write[]' type='checkbox' value='sport' id='write_s'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                          Sport
+                        </label>
+                      </div>
+                      <div class='form-check'>
+                        <input class='form-check-input' name='write[]' type='checkbox' value='editorial' id='write_e'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                          Editorial
+                        </label>
+                      </div>
+                      <div class='form-check'>
+                        <input class='form-check-input' name='write[]' type='checkbox' value='trailer' id='write_tr'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                          Trailer
+                        </label>
+                      </div>
+                      <div class='form-check'>
+                        <input class='form-check-input' name='write[]' type='checkbox' value='technology' id='write_te'>
+                        <label class='form-check-label' for='flexCheckDefault'>
+                          Technology
+                        </label>
+                      </div>
+                    </div>
+                </div> 
           	</div>
           	<div class='modal-footer'>
             	<button type='button' class='btn btn-default btn-flat pull-left' data-dismiss='modal'><i class='fa fa-close'></i> Close</button>
