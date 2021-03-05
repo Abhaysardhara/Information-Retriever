@@ -8,7 +8,7 @@ echo "<div class='modal fade' id='addNewSport'>
 					<h4 class='modal-title'><b><span class='add_sport_head'>Add Sport Entry</span></b></h4>
 				</div>
 				<div class='modal-body'>
-					<form class='form-horizontal' method='POST' action='add_new_sport.php'>
+					<form class='form-horizontal' id='add_my_sport_form' method='POST' action='add_new_sport.php'>
 					<div class='form-group'>
 						<label for='add_sport_headline' class='col-sm-3 control-label'>Headline</label>
 
@@ -58,7 +58,7 @@ echo "<div class='modal fade' id='addNewSport'>
 					<h4 class='modal-title'><b><span class='add_edito_head'>Add Editorial Entry</span></b></h4>
 				</div>
 				<div class='modal-body'>
-					<form class='form-horizontal' method='POST' action='add_new_editorial.php'>
+					<form class='form-horizontal' id='add_my_edito_form' method='POST' action='add_new_editorial.php'>
 					<div class='form-group'>
 						<label for='add_edito_headline' class='col-sm-3 control-label'>Headline</label>
 
@@ -100,7 +100,7 @@ echo "<div class='modal fade' id='addNewSport'>
 					<h4 class='modal-title'><b><span class='add_trailer_head'>Add Trailer Entry</span></b></h4>
 				</div>
 				<div class='modal-body'>
-					<form class='form-horizontal' method='POST' action='add_new_trailer.php'>
+					<form class='form-horizontal' id='add_my_trail_form' method='POST' action='add_new_trailer.php'>
 						<input type='hidden' class='trailerid' name='id3'>
 					<div class='form-group'>
 						<label for='add_film_title' class='col-sm-3 control-label'>Title</label>
@@ -170,7 +170,7 @@ echo "<div class='modal fade' id='addNewSport'>
 					<h4 class='modal-title'><b><span class='add_tech_head'>Add New Technology News</span></b></h4>
 				</div>
 				<div class='modal-body'>
-					<form class='form-horizontal' method='POST' action='add_new_tech.php'>
+					<form class='form-horizontal' id='add_my_tech_form' method='POST' action='add_new_tech.php'>
 					<div class='form-group'>
 						<label for='add_tech_headline' class='col-sm-3 control-label'>Headline</label>
 

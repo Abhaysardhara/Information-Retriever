@@ -17,10 +17,10 @@ $db = $database->getConnection();
 $sport = new Sport($db);
 
 if(isset($_POST['add1'])){
-    $sport->headline = $_POST['add_sport_headline'];
-    $sport->author = $_POST['add_sport_author'];
-    $sport->sport = $_POST['add_sport_sport'];
-    $sport->link = $_POST['add_sport_url'];
+    $sport->headline = filter_var($_POST['add_sport_headline'], FILTER_SANITIZE_STRING);
+    $sport->author = filter_var($_POST['add_sport_author'], FILTER_SANITIZE_STRING);
+    $sport->sport = filter_var($_POST['add_sport_sport'], FILTER_SANITIZE_STRING);
+    $sport->link = filter_var($_POST['add_sport_url'], FILTER_SANITIZE_URL);
 
     // create the user
     if($sport->create()) {

@@ -17,17 +17,15 @@ $db = $database->getConnection();
 $edito = new Editorial($db);
 
 if(isset($_POST['add2'])){
-    $edito->headline = $_POST['add_edito_headline'];
-    $edito->paper = $_POST['add_edito_paper'];
-    $edito->link = $_POST['add_edito_url'];
+    $edito->headline = filter_var($_POST['add_edito_headline'], FILTER_SANITIZE_STRING);
+    $edito->paper = filter_var($_POST['add_edito_paper'], FILTER_SANITIZE_STRING);
+    $edito->link = filter_var($_POST['add_edito_url'], FILTER_SANITIZE_URL);
 
     // create the user
     if($edito->create()) {
 
         $_SESSION['add_suc_edito'] = 'New entry added to Editorial';
         header('location: '. $home_url . '?action=editorial');
-
-        echo "<div class='alert alert-success' role='alert'>New entry added to Editorial</div>";
         // empty posted values
         $_POST=array();
 

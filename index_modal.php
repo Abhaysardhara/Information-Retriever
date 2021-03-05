@@ -8,7 +8,7 @@ echo "<div class='modal fade' id='edit1'>
 					<h4 class='modal-title'><b><span class='sport_headline_head'></span></b></h4>
 				</div>
 				<div class='modal-body'>
-					<form class='form-horizontal' method='POST' action='sport_update.php'>
+					<form class='form-horizontal' method='POST' id='edit_my_sport_form' action='sport_update.php'>
 						<input type='hidden' class='sportid' name='id1'>
 					<div class='form-group'>
 						<label for='edit_sport_headline' class='col-sm-3 control-label'>Headline</label>
@@ -21,14 +21,14 @@ echo "<div class='modal fade' id='edit1'>
 						<label for='edit_sport_author' class='col-sm-3 control-label'>Author</label>
 
 						<div class='col-sm-9'>
-						<input type='text' class='form-control' pattern='[A-Za-z0-9]{2,}' id='edit_sport_author' name='sport_author' required>
+						<input type='text' class='form-control' pattern='[A-Za-z\s]{2,}' title='Author name must have characters and length greater or equals to 2' id='edit_sport_author' name='sport_author' required>
 						</div>
 					</div>
 					<div class='form-group'>
 						<label for='edit_sport_sport' class='col-sm-3 control-label'>Sport</label>
 
 						<div class='col-sm-9'>
-						<input type='text' class='form-control' pattern='[A-Za-z]{2,}' id='edit_sport_sport' name='sport_sport' required>
+						<input type='text' class='form-control' pattern='[A-Za-z\s]{2,}' title='Sport name must have characters and length greater or equals to 2' id='edit_sport_sport' name='sport_sport' required>
 						</div>
 					</div>
 					<div class='form-group'>
@@ -59,7 +59,7 @@ echo "<div class='modal fade' id='edit1'>
 					<h4 class='modal-title'><b><span class='editorial_headline_head'></span></b></h4>
 				</div>
 				<div class='modal-body'>
-					<form class='form-horizontal' method='POST' action='editorial_update.php'>
+					<form class='form-horizontal' method='POST' id='edit_my_edito_form' action='editorial_update.php'>
 						<input type='hidden' class='editorialid' name='id2'>
 					<div class='form-group'>
 						<label for='edit_edit_headline' class='col-sm-3 control-label'>Headline</label>
@@ -72,7 +72,7 @@ echo "<div class='modal fade' id='edit1'>
 						<label for='edit_edit_paper' class='col-sm-3 control-label'>Paper</label>
 
 						<div class='col-sm-9'>
-						<input type='text' class='form-control' id='edit_edit_paper' name='edito_paper' required>
+						<input type='text' class='form-control' pattern='[A-Za-z\s]{2,}' title='Paper name must have length greater or equals to 2' id='edit_edit_paper' name='edito_paper' required>
 						</div>
 					</div>
 					<div class='form-group'>
@@ -102,7 +102,7 @@ echo "<div class='modal fade' id='edit1'>
 					<h4 class='modal-title'><b><span class='trailer_title_head'></span></b></h4>
 				</div>
 				<div class='modal-body'>
-					<form class='form-horizontal' method='POST' action='trailer_update.php'>
+					<form class='form-horizontal' method='POST' id='edit_my_trail_form' action='trailer_update.php'>
 						<input type='hidden' class='trailerid' name='id3'>
 					<div class='form-group'>
 						<label for='edit_trail_title' class='col-sm-3 control-label'>Title</label>
@@ -165,7 +165,7 @@ echo "<div class='modal fade' id='edit1'>
 					<h4 class='modal-title'><b><span class='tech_headline_head'></span></b></h4>
 				</div>
 				<div class='modal-body'>
-					<form class='form-horizontal' method='POST' action='techno_update.php'>
+					<form class='form-horizontal' id='edit_my_tech_form' method='POST' action='techno_update.php'>
 						<input type='hidden' class='techid' name='tech_id'>
 					<div class='form-group'>
 						<label for='edit_tech_headline' class='col-sm-3 control-label'>Headline</label>

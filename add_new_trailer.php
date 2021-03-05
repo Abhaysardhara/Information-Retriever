@@ -17,12 +17,12 @@ $db = $database->getConnection();
 $film = new Film($db);
 
 if(isset($_POST['add3'])){
-    $film->title = $_POST['add_film_title'];
+    $film->title = filter_var($_POST['add_film_title'], FILTER_SANITIZE_STRING);
+    $film->description  = filter_var($_POST['add_film_description'], FILTER_SANITIZE_STRING);
+    $film->url = filter_var($_POST['add_film_url'], FILTER_SANITIZE_URL);
     $film->language = $_POST['add_film_language'];
-    $film->description = $_POST['add_film_description'];
     $film->date = $_POST['add_film_release'];
     $film->review = $_POST['add_film_review'];
-    $film->url = $_POST['add_film_url'];
 
     // create the user
     if($film->create()) {

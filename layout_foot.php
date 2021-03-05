@@ -3,6 +3,7 @@
 
 <!-- jQuery library -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
 
 <!-- Bootstrap JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -11,6 +12,74 @@
 	//  $(document).ready(function(){
     //     $('#myTable').DataTable();
     // });
+	$("#edit_my_sport_form").validate();
+	$("#edit_my_edito_form").validate();
+	$("#edit_my_trail_form").validate();
+	$("#edit_my_tech_form").validate();
+	$("#add_my_sport_form").validate();
+	$("#add_my_edito_form").validate();
+	$("#add_my_trail_form").validate();
+	$("#add_my_tech_form").validate();
+
+	jQuery.validator.addMethod("validate_email", function(value, element) {
+		if (/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(value)) {
+			return true;
+		} else {
+			return false;
+		}
+	}, "Please enter a valid Email.");
+	
+	$("#register").validate(
+		{
+			errorClass: "error fail-alert",
+			validClass: "valid success-alert",
+			rules: {
+				"choice[]": { 
+					required: true
+				},
+				"email": {
+					required: true,
+					validate_email: true
+				},
+				"contact_number": {
+					required: true,
+					number: true,
+					minlength: 10,
+					maxlength: 10
+				},
+				"password": {
+					required: true,
+					minlength: 8
+				},
+				"nick_name": {
+					required: true,
+					minlength: 2
+				}
+			}, 
+			messages: { 
+				"spam[]": "Please select at least one choice."
+			}
+		}
+	);
+	
+	function formatDate() {
+		var d = new Date(),
+			month = '' + (d.getMonth() + 1),
+			day = '' + d.getDate(),
+			year = d.getFullYear();
+
+		if (month.length < 2) 
+			month = '0' + month;
+		if (day.length < 2) 
+			day = '0' + day;
+
+		return [year, month, day].join('-');
+	}
+
+	document.getElementById("edit_trail_rel").setAttribute("max", formatDate());
+	document.getElementById("edit_trail_rel").setAttribute("min", "2019-01-01");
+	document.getElementById("add_film_release").setAttribute("max", formatDate());
+	document.getElementById("add_film_release").setAttribute("min", "2019-01-01");
 
 	window.setTimeout(function() {
 		$(".alert").fadeTo(500, 0).slideUp(1000, function(){

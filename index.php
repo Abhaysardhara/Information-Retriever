@@ -162,6 +162,30 @@ echo "<div class='col-md-12'>";
 		echo "<div class='alert alert-success alert-dismissible' role='alert'>Technology entry updated successfully.</div>";
 		unset($_SESSION['te_success_update']);
 	}
+	else if(isset($_SESSION['tr_success_update'])) {
+		echo "<div class='alert alert-success alert-dismissible' role='alert'>Trailer entry updated successfully.</div>";
+		unset($_SESSION['tr_success_update']);
+	}
+	else if(isset($_SESSION['te_success_add'])) {
+		echo "<div class='alert alert-success alert-dismissible' role='alert'>Technology entry added successfully.</div>";
+		unset($_SESSION['te_success_add']);
+	}
+	else if(isset($_SESSION['add_suc_edito'])) {
+		echo "<div class='alert alert-success alert-dismissible' role='alert'>". $_SESSION['add_suc_edito'] . "</div>";
+		unset($_SESSION['add_suc_edito']);
+	}
+	else if(isset($_SESSION['add_suc_tech'])) {
+		echo "<div class='alert alert-success alert-dismissible' role='alert'>". $_SESSION['add_suc_tech'] ."</div>";
+		unset($_SESSION['add_suc_tech']);
+	}
+	else if(isset($_SESSION['add_suc_sport'])) {
+		echo "<div class='alert alert-success alert-dismissible' role='alert'>". $_SESSION['add_suc_sport'] ."</div>";
+		unset($_SESSION['add_suc_sport']);
+	}
+	else if(isset($_SESSION['add_suc_trail'])) {
+		echo "<div class='alert alert-success alert-dismissible' role='alert'>" . $_SESSION['add_suc_trail'] . "</div>";
+		unset($_SESSION['add_suc_trail']);
+	}
 	else if(isset($_SESSION['error'])) {
 		echo "<div class='alert alert-danger alert-dismissible' role='alert'>There is some error, please contact developer.</div>";  
 		unset($_SESSION['error']); 

@@ -102,40 +102,40 @@ echo "<div class='col-md-12'>";
 
             <tr>
                 <td class='width-30-percent'>Firstname</td>
-                <td><input type='text' name='firstname' id='firstname' pattern='[A-Za-z]{2,}' title="Length of firstname should have minimum length 2" minlength='2' class='form-control' autocomplete='off' required value="<?php echo isset($_POST['firstname']) ? htmlspecialchars($_POST['firstname'], ENT_QUOTES) : "";  ?>"/>
+                <td><input type='text' name='firstname' id='firstname' pattern='[A-Za-z\s]{2,}' title="Length of firstname should have minimum length 2" minlength='2' class='form-control' autocomplete='off' required value="<?php echo isset($_POST['firstname']) ? htmlspecialchars($_POST['firstname'], ENT_QUOTES) : "";  ?>"/>
                 </td>
             </tr>
 
             <tr>
                 <td>Lastname</td>
-                <td><input type='text' name='lastname' id='lastname' pattern='[A-Za-z]{1,}' title="Length of lastname should have minimum length 1" minlength='1' class='form-control' required value="<?php echo isset($_POST['lastname']) ? htmlspecialchars($_POST['lastname'], ENT_QUOTES) : "";  ?>" /></td>
+                <td><input type='text' name='lastname' id='lastname' pattern='[A-Za-z\s]{1,}' title="Length of lastname should have minimum length 1" minlength='1' class='form-control' required value="<?php echo isset($_POST['lastname']) ? htmlspecialchars($_POST['lastname'], ENT_QUOTES) : "";  ?>" /></td>
             </tr>
 
             <tr>
                 <td>Contact Number</td>
-                <td><input type='tel' name='contact_number' id='contact' class='form-control' pattern="[6-9]{1}[0-9]{9}" title="Mobile number should not be start with 0-5 and it should be of length 10" required value="<?php echo isset($_POST['contact_number']) ? htmlspecialchars($_POST['contact_number'], ENT_QUOTES) : "";  ?>"/></td>
+                <td><input type='tel' name='contact_number' id='contact' class='form-control' required value="<?php echo isset($_POST['contact_number']) ? htmlspecialchars($_POST['contact_number'], ENT_QUOTES) : "";  ?>"/></td>
             </tr>
 
             <tr>
                 <td>Address</td>
-                <td><textarea name='address' id='address' pattern="[\w',-\\/.\s]" class='form-control' required><?php echo isset($_POST['address']) ? htmlspecialchars($_POST['address'], ENT_QUOTES) : "";  ?></textarea></td>
+                <td><input type='text' name='address' id='address' class='form-control' required value="<?php echo isset($_POST['address']) ? htmlspecialchars($_POST['address'], ENT_QUOTES) : "";  ?>"></td>
             </tr>
 
             <tr>
                 <td>Email</td>
-                <td><input type='email' name='email' id='email' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$' title='Enter valid email address' class='form-control' required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email'], ENT_QUOTES) : "";  ?>" /></td>
+                <td><input type='email' name='email' id='email' class='form-control' required value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email'], ENT_QUOTES) : "";  ?>" /></td>
             </tr>
 
             <tr>
                 <td>Password</td>
-                <td><input type='password' name='password' id='password' pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title='Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters' class='form-control' required id='passwordInput'></td>
+                <td><input type='password' name='password' id='password' class='form-control' required id='passwordInput'></td>
             </tr>
 
             <tr>
                 <td>Interest</td>
                 <td>
                     <div class="browsers">
-                        <input type="checkbox" name="choice[]" value="sport" checked required/><span style='margin-right: 15px'> Sports</span>
+                        <input type="checkbox" name="choice[]" value="sport"/><span style='margin-right: 15px'> Sports</span>
                         <input type="checkbox" name="choice[]" value="editorial"/><span style='margin-right: 15px'> Editorial</span>
                         <input type="checkbox" name="choice[]" value="trailer"/><span style='margin-right: 15px'> Trailer</span>
                         <input type="checkbox" name="choice[]" value="technology"/><span> Technology</span>
@@ -145,7 +145,7 @@ echo "<div class='col-md-12'>";
 
             <tr>
                 <td>Your Nickname</td>
-                <td><input type='text' name='nick_name' id='nick_name' pattern='[A-Za-z]{2,}' pattern="Must contain only letters and with minimum length 2" class='form-control' required id='passwordInput'></td>
+                <td><input type='text' name='nick_name' id='nick_name' pattern='[A-Za-z\s]{2,}' pattern="Must contain only letters and with minimum length 2" class='form-control' required id='passwordInput'></td>
             </tr>
 
             <tr>
@@ -160,8 +160,8 @@ echo "<div class='col-md-12'>";
                 <td></td>
                 <td>
                     Already have an account? <a href="<?php $home_url ?>login.php">Login here</a>
-            </tr>
                 </td>
+            </tr>
 
         </table>
     </form>

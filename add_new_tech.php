@@ -17,10 +17,10 @@ $db = $database->getConnection();
 $tech = new Techno($db);
 
 if(isset($_POST['add4'])){
-    $tech->headline = $_POST['add_tech_headline'];
-    $tech->author = $_POST['add_tech_author'];
-    $tech->category = $_POST['add_tech_category'];
-    $tech->link = $_POST['add_tech_url'];
+    $tech->headline = filter_var($_POST['add_tech_headline'], FILTER_SANITIZE_STRING);
+    $tech->author  = filter_var($_POST['add_tech_author'], FILTER_SANITIZE_STRING);
+    $tech->category = filter_var($_POST['add_tech_author'], FILTER_SANITIZE_STRING);
+    $tech->link = filter_var($_POST['add_tech_url'], FILTER_SANITIZE_URL);
 
     // create the user
     if($tech->create()) {

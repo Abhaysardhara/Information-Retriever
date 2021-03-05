@@ -25,7 +25,7 @@ $utils = new Utils();
 include_once "layout_head.php";
 
 // if the login form was submitted
-if($_POST){
+if($_POST['forgot_post']){
 	echo "<div class='col-md-'>";
 
 		// check if username and password are in the database
@@ -58,7 +58,7 @@ echo "<div class='col-md-4'>";
 				<form class='form-signin' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' method='post'>
 					<input type='email' name='email' class='form-control' placeholder='Enter email id' style='margin-bottom : 10px' required autofocus>
 					<input type='text' name='nick_name' class='form-control' placeholder='Enter your nick name' required>
-					<input type='submit' class='btn btn-lg btn-primary btn-block' value='Reset' style='margin-top:1em;' />
+					<input type='submit' name='forgot_post' class='btn btn-lg btn-primary btn-block' value='Reset' style='margin-top:1em;' />
 				</form>
 			</div>
 		</div>

@@ -8,6 +8,14 @@
 
 div#blueimp-gallery div.modal{ overflow: visible; }
   
+label.error.fail-alert {
+    color : rgb(233, 60, 60);
+}
+input.valid.success-alert {
+    border: 2px solid #4CAF50;
+    color: green;
+}
+
 .photo-thumb{
     width:214px;
     height:214px;
